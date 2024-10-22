@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+h1 {
+    margin-top: 20px;
+    color: #333;
+}
+
+.map-container {
+    margin-top: 30px;
+}
+
+#north-vietnam-map {
+    width: 400px;
+    height: 600px;
+}
+
+svg g:hover path {
+    fill: #ff6347;
+    cursor: pointer;
+}
+
+svg text {
+    font-family: Arial, sans-serif;
+    pointer-events: none;
+}

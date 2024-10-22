@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký</title>
+    <link rel="stylesheet" href="fb.css">
+</head>
+<body>
+    <div class="register-form">
+        <h2>Đăng ký</h2>
+        <p>Nhanh chóng và dễ dàng.</p>
+        <form>
+            <input type="text" placeholder="Họ" required>
+            <input type="text" placeholder="Tên" required>
+            <input type="text" placeholder="Số di động hoặc email" required>
+            <input type="password" placeholder="Mật khẩu" required>
+            
+            <div class="dob">
+                <select name="day" id="day">
+                    <option aria-valuetext="Chon ngay">Chọn ngày</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <!-- Thêm các option khác -->
+                </select>
+                <select name="month" id="month">
+                    <option aria-valuetext="Chon thang">Chọn tháng</option>
+                    <option value="1">Tháng 1</option>
+                    <option value="2">Tháng 2</option>
+                    <option value="3">Tháng 3</option>
+                    <option value="4">Tháng 4</option>
+                    <option value="5">Tháng 5</option>
+                    <option value="6">Tháng 6</option>
+                    <option value="7">Tháng 7</option>
+                    <option value="8">Tháng 8</option>
+                    <option value="9">Tháng 9</option>
+                    <option value="10">Tháng 10</option>
+                    <option value="11">Tháng 11</option>
+                    <option value="12">Tháng 12</option>
+                </select>
+                <select name="year" id="year">
+                    <option aria-valuetext="Chon nam">Chọn năm</option>
+                    <option value="2024">2024</option>
+                    <!-- Thêm các option khác -->
+                </select>
+            </div>
+            <div class="gender">
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Nữ</label>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Nam</label>
+                <input type="radio" id="custom" name="gender" value="custom">
+                <label for="custom">Tùy chỉnh</label>
+            </div>
+
+            <p>Những người dùng dịch vụ của chúng tôi có thể đã tải thông tin liên hệ của bạn lên Facebook. <a href="#">Tìm hiểu thêm.</a></p>
+            <p>Bằng cách nhấp vào Đăng ký, bạn đồng ý với <a href="#">Điều khoản</a>, <a href="#">Chính sách quyền riêng tư</a> và <a href="#">Chính sách cookie</a> của chúng tôi. Bạn có thể nhận được thông báo qua SMS và hủy nhận bất kỳ lúc nào.</p>
+
+            <button type="submit">Đăng ký</button>
+        </form>
+    </div>
+</body>
+</html>

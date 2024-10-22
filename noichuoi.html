@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function noichuoi() {
+            var x = document.getElementById("text1").value;
+            var y = document.getElementById("text2").value;
+
+            var ketqua = document.getElementById("ketqua").value = x + y;
+
+            alert(ketqua);
+            
+            
+        }
+        var donGia = 10000
+        function capnhatSoluong(change) {
+            var number = parseInt(document.getElementById("number").value);
+
+              number += change;
+
+            if (number < 0) {
+                number = 0;
+            }
+      
+            document.getElementById("number").value = number;
+
+            var thanhTien = donGia * number ;
+
+            document.getElementById("thanhTien").innerText = thanhTien.toLocaleString('vi-VN') + "VND"
+
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noi chuoi va cong</title>
+</head>
+<body>
+    <h3>Noi chuoi</h3>
+
+        <label for="text1">Text 1:</label>
+        <input type="text" id="text1">
+
+        <label for="text2">Text 2: </label>
+        <input type="text" id="text2">
+
+        <button onclick="noichuoi()">Result</button>
+
+    <h3>-----</h3>
+        <label for="ketqua">Ket qua: </label>
+        <input type="text"  id="ketqua" readonly>
+    <h3>Thanh tien</h3>
+        <h4>Don gia: 10000 VND</h4>
+        <label for="number"></label>
+        <button onclick="capnhatSoluong(1)">+</button>
+        <input type="number" id="number" value="0" readonly>
+        <button onclick="capnhatSoluong(-1)">-</button>
+        <br><br>
+        <h3>Thanh tien: </h3>
+        <label id="thanhTien">0 VND </label>
+</body>
+</html>

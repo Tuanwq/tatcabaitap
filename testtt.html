@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bản đồ miền Bắc Việt Nam</title>
+    <style>
+        svg {
+            width: 100%;
+            height: auto;
+        }
+
+        .province {
+            stroke: #fff;
+            stroke-width: 1;
+        }
+
+        /* Màu sắc cho các khu vực */
+        .province-1 { fill: #f39c12; }
+        .province-2 { fill: #27ae60; }
+        .province-3 { fill: #2980b9; }
+        .province-4 { fill: #e74c3c; }
+        .province-5 { fill: #95a5a6; }
+
+        /* Hiệu ứng hover */
+        .province:hover {
+            fill-opacity: 0.7;
+            cursor: pointer;
+        }
+
+        /* Tooltip style */
+        .tooltip {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: none;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bản đồ miền Bắc Việt Nam</h1>
+    
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip"></div>
+    
+    <svg viewBox="0 0 800 600">
+        <!-- Các khu vực trong miền Bắc Việt Nam -->
+        <g class="province province-1" data-name="Hà Nội">
+            <path d="M100,100 L150,150 L200,100 Z" />
+        </g>
+        <g class="province province-2" data-name="Hải Phòng">
+            <path d="M200,200 L250,250 L300,200 Z" />
+        </g>
+        <g class="province province-3" data-name="Quảng Ninh">
+            <path d="M300,300 L350,350 L400,300 Z" />
+        </g>
+        <!-- Thêm các tỉnh khác -->
+    </svg>
+
+    <script>
+        const tooltip = document.getElementById('tooltip');
+        const provinces = document.querySelectorAll('.province');
+
+        provinces.forEach(province => {
+            province.addEventListener('mouseover', function (e) {
+                const provinceName = this.getAttribute('data-name');
+                tooltip.textContent = provinceName;
+                tooltip.style.display = 'block';
+            });
+
+            province.addEventListener('mousemove', function (e) {
+                tooltip.style.left = e.pageX + 10 + 'px';
+                tooltip.style.top = e.pageY + 10 + 'px';
+            });
+
+            province.addEventListener('mouseout', function () {
+                tooltip.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
