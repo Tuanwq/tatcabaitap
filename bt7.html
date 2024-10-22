@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký tài khoản</title>
+    <script>
+        function validateForm() {
+           
+            var ho = document.getElementById("ho").value;
+            var ten = document.getElementById("ten").value;
+            var ngaySinh = document.getElementById("ngaySinh").value;
+            var gioiTinh = document.querySelector('input[name="gioiTinh"]:checked');
+
+            
+            if (ho === "" || ten === "" || ngaySinh === "" || !gioiTinh) {
+                alert("Vui lòng điền đầy đủ thông tin.");
+                return false;
+            } else {
+                
+                var gioiTinhText = gioiTinh.value === "male" ? "Nam" : "Nữ";
+                alert("Xin chào " + ho + " " + ten + ", sinh ngày " + ngaySinh + ", giới tính " + gioiTinhText + ". Đã đăng ký thành công!");
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Đăng ký tài khoản</h2>
+    <form onsubmit="return validateForm()">
+        <label for="ho">Họ:</label>
+        <input type="text" id="ho" name="ho"><br><br>
+        
+        <label for="ten">Tên:</label>
+        <input type="text" id="ten" name="ten"><br><br>
+        
+        <label for="ngaySinh">Ngày sinh:</label>
+        <input type="date" id="ngaySinh" name="ngaySinh"><br><br>
+        
+        <label>Giới tính:</label>
+        <input type="radio" id="male" name="gioiTinh" value="male">
+        <label for="male">Nam</label>
+        <input type="radio" id="female" name="gioiTinh" value="female">
+        <label for="female">Nữ</label><br><br>
+        
+        <input type="submit" value="Đăng ký">
+    </form>
+</body>
+</html>
